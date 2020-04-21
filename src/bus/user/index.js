@@ -15,12 +15,14 @@ export const User = () => {
         <>
             <h1>User Role: {role}</h1>
             <button
+                id="changeUserRoleToAdmin"
                 type="button"
                 onClick={changeUserRoleToAdmin}
             >
                 Change user role to admin
             </button>
             <button
+                id="changeUserRoleToCustomer"
                 type="button"
                 onClick={changeUserRoleToCustomer}
             >
