@@ -17,7 +17,7 @@ const setup = (role = 'unknown') => {
     jest.spyOn(userActions, 'changeRole');
 };
 
-describe('useProfile', () => {
+describe('Hook: useProfile', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
@@ -26,7 +26,7 @@ describe('useProfile', () => {
         jest.restoreAllMocks();
     });
 
-    test('Property role returned the correct value', () => {
+    test('Property role should return the correct value', () => {
         const initialRole = 'unknown';
 
         setup(initialRole);
@@ -36,7 +36,7 @@ describe('useProfile', () => {
         expect(role).toBe(initialRole);
     });
 
-    test('Method changeUserRoleToAdmin dispatched the correct action', () => {
+    test('Method changeUserRoleToAdmin should dispatch the correct action', () => {
         setup();
 
         const { changeUserRoleToAdmin } = useProfile();
@@ -45,7 +45,7 @@ describe('useProfile', () => {
         expect(userActions.changeRole).toHaveBeenCalledTimes(1);
     });
 
-    test('Method changeUserRoleToAdmin dispatched the action with correct payload', () => {
+    test('Method changeUserRoleToAdmin should dispatch the action with correct payload', () => {
         setup();
 
         const { changeUserRoleToAdmin } = useProfile();
@@ -54,7 +54,7 @@ describe('useProfile', () => {
         expect(userActions.changeRole).toHaveBeenCalledWith('admin');
     });
 
-    test('Method changeUserRoleToCustomer dispatched the correct action', () => {
+    test('Method changeUserRoleToCustomer should dispatch the correct action', () => {
         setup();
 
         const { changeUserRoleToCustomer } = useProfile();
@@ -63,7 +63,7 @@ describe('useProfile', () => {
         expect(userActions.changeRole).toHaveBeenCalledTimes(1);
     });
 
-    test('Method changeUserRoleToCustomer dispatched the action with correct payload', () => {
+    test('Method changeUserRoleToCustomer should dispatch the action with correct payload', () => {
         setup();
 
         const { changeUserRoleToCustomer } = useProfile();

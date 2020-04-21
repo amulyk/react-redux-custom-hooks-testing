@@ -10,7 +10,9 @@ import { User } from './index';
 
 const mockStore = configureMockStore();
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({
+    adapter: new Adapter()
+});
 
 const setup = (initialRole = 'unknown') => {
     const store = mockStore({
@@ -26,12 +28,12 @@ const setup = (initialRole = 'unknown') => {
     );
 };
 
-describe('User component', () => {
+describe('Component: User', () => {
     test('Component User should render without any errors', () => {
         setup();
     });
 
-    test('Component User should render user with correct initial role', () => {
+    test('Component User should render user with correct role', () => {
         const initialRole = 'unknown';
 
         const wrapper = setup(initialRole);
@@ -40,6 +42,5 @@ describe('User component', () => {
         const expectedValue = `User Role: ${initialRole}`;
 
         expect(currentValue).toBe(expectedValue);
-    });
+    })
 });
-
